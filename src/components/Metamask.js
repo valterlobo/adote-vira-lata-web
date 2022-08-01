@@ -55,6 +55,9 @@ class Metamask extends Component {
     );
     await tx.wait();
     console.log("Hash -- ", tx.hash);
+    //alterar  state
+    this.connectToMetamask() 
+    //window.location.reload(); 
   }
 
   async obterFicha(id) {
