@@ -7,7 +7,7 @@ const Navbar = () => {
         <header className="header-transparent">
             <nav className="navbar navbar-expand-lg text-center">
                 <div className="container">
-                    <Link to="/" className="navbar-brand">A.</Link>
+                    <Link to="/" className="navbar-brand">Au Au.</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon">
                             <i className="fi-xwluxl-three-bars-wide"></i>

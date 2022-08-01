@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-
+import { Link } from 'react-router-dom';
+import dogadotado from '../img/dog-adotado.gif';
 import abi from "../contract/AdotarAuAu.json";
 
 import { ethers } from "ethers";
@@ -59,8 +60,6 @@ class Metamask extends Component {
   async obterFicha(id) {
     const provider = new ethers.providers.Web3Provider(window.ethereum);
     const signer = provider.getSigner();
-
-    //contrato : 0xD5E522f9d1b02487190377642785FD1a23a81d3B
     const contract = new ethers.Contract(CONTRACT_ADDR, CONTRACT_ABI, signer);
 
     let ficha = await contract.obterAdotivo(id);
@@ -75,26 +74,39 @@ class Metamask extends Component {
           className="btn text-white"
           onClick={() => this.connectToMetamask()}
         >
-          Connectar
+          Conectar
         </button>
       );
     } else if (this.state.ficha.id== this.state.item.id) {
       return (
         <div>
-          <h1> ja foi adotado  </h1>
+          <h2  className="work-title">Adotado</h2>
+          <div className="image-container center-block">
+          <img src={dogadotado}  className="detail-image" />
+          </div>
+          <hr/> 
+           <div>
+                        <Link to="/adote">
+                                <button className="btn text-white">
+                                    Encontre
+                                </button>
+                        </Link>                     
+
+          </div>
         </div>
       );
     }
     else  {
       return (
-        <div>
-          <p> Seu endereço da carteira: </p>
+       <div>
+          <h2  className="work-title">Seu dados:</h2>
           <p>{this.state.selectedAddress}</p>
-          <p>ETH:{this.state.balance}</p>
+          <p>BALANCE:{this.state.balance}</p>
           <button
             className="btn text-white"
             onClick={() => this.adoteContrato(this.state.item)}
           >
+        
             {" "}
             Adotar
           </button>

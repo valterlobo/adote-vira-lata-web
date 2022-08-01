@@ -1,5 +1,4 @@
 import React from "react";
-import { ethers } from "ethers";
 import Metamask from "./Metamask";
 
 
@@ -48,15 +47,9 @@ const CaoDetalheComponente = (props) => {
                   <span className="category-title pr-3">Cuidados:</span>
                   <span className="work-category">{cuidados.join(" | ")}</span>
                 </div>
-
+                <hr />
                 <div className="detail-button mb-3">
                     <Metamask item={props.item}/>
-                </div>
-
-                <div className="detail-button mb-3">
-                  <div className="text-white mb-3">
-                      <button className="btn text-white">Adotar</button>
-                  </div>
                 </div>
               </div>
             </div>
